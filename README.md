@@ -5,7 +5,7 @@ lets you build rich client-side applications composed of different
 sub-applications, or components, as called in SPAghetto.
 
 SPAghetto doesn't write your components, but takes care of the rest :
-  - you have a full-featured [Bootstrap](http://getbootstrap.com/) navigation bar :
+  - a full-featured [Bootstrap](http://getbootstrap.com/) navigation bar :
     - with tabs and menus for your components
     - automatic shows the active component menu and hides the others
     - responsive
