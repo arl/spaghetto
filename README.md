@@ -1,10 +1,10 @@
 ## Easily build modular single page webapps
 
-Besides being the italian singular for spaghetti, spaghetto is a framework that
+Besides being the italian singular for spaghetti, SPAghetto is a framework that
 lets you build rich client-side applications composed of different
-sub-applications, or components, as we call them in spaghetto.
+sub-applications, or components, as called in SPAghetto.
 
-Spaghetto doesn't write your components, but takes care of the rest :
+SPAghetto doesn't write your components, but takes care of the rest :
   - you have a full-featured [Bootstrap](http://getbootstrap.com/) navigation bar :
     - with tabs and menus for your components
     - automatic shows the active component menu and hides the others
@@ -17,6 +17,7 @@ Spaghetto doesn't write your components, but takes care of the rest :
       - [JSHint](http://jshint.com/) and [JSCS](http://jscs.info/) cor code quality and style
       - minified, compressed code [UglifyJS](https://github.com/mishoo/UglifyJS)
       - component styling with the powerful [SCSS](http://sass-lang.com/)
+      - documentation built with [ngdoc](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation#standard-supported-jsdoc-directives)
 
 And the list goes on, read the extensive documentation
 
@@ -27,6 +28,14 @@ concentrate on writing your application instead
 
 ## Install
 
-## Build
+## Build the example app
+
+# Hack SPAghetto
+
+## Build it yourself
 
 ## Build your app documentation
+
+# License
+SPAghetto is released under the MIT License. See the [LICENSE][license] file for further details.
+[license]: https://github.com/aurelien-rainone/spaghetto/blob/master/LICENSE
