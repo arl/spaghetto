@@ -5,11 +5,14 @@ var del = require('del');
 var glob = require('glob');
 var merge = require('merge2');
 var config = require('./gulp.config.js')();
+var common = require('./gulp/common.js');
 var plug = require('gulp-load-plugins')();
 
 var env = plug.util.env;
 var log = plug.util.log;
 var chalk = plug.util.colors;
+
+global.date = plug.util.date;
 var port = process.env.PORT || 7203;
 
 // create 2 browser-sync instances
@@ -17,13 +20,16 @@ var bsClient = browserSync.create("bsClient");
 var bsKarmaRpt = browserSync.create("bsKarmaRpt");
 var bsNgDocs = browserSync.create("bsNgDocs");
 
+/**/
+var spa_version = '0.0.1'
+
 /**
  * List the available gulp tasks
  */
 gulp.task('help', plug.taskListing);
 gulp.task('default', ['welcome', 'help']);
 
-
+// TODO : move this task to opencog workbench, and out of spaghetto
 gulp.task('welcome', function() {
 
     var ocLogo = Array('',
@@ -62,7 +68,6 @@ gulp.task('welcome', function() {
 
     // BUG
     log(chalk.yellow('BUG'), 'busy overlay not shown in build mode');
-    log(chalk.cyan('BUG'), 'replace null in bower.json');
     log(chalk.cyan('BUG'), 'gulp test/autotest --startServers crash :\n\tsee ==>\t\thttps://bitbucket.org/panty79/ocworkbench/issue/4');
 
 
@@ -81,12 +86,13 @@ gulp.task('templatecache', function() {
         .pipe(plug.minifyHtml({
             empty: true
         }))
-        // .pipe(plug.bytediff.stop(bytediffFormatter))
+        // .pipe(plug.bytediff.stop(common.bytediffFormatter))
         .pipe(plug.angularTemplatecache('templates.js', {
             module: 'app.core',
             standalone: false,
             root: 'app/'
         }))
+        .pipe(plug.header(common.createComments(spa_version)))
         .pipe(gulp.dest(config.build + 'js/'));
 });
 
@@ -109,7 +115,8 @@ gulp.task('js', ['analyze', 'templatecache'], function() {
         .pipe(plug.uglify({
             mangle: true
         }))
-        .pipe(plug.bytediff.stop(bytediffFormatter))
+        .pipe(plug.bytediff.stop(common.bytediffFormatter))
+        .pipe(plug.header(common.createComments(spa_version)))
         .pipe(gulp.dest(config.build + 'js/'));
 });
 
@@ -124,7 +131,8 @@ gulp.task('vendorjs', function() {
         .pipe(plug.concat('vendor.min.js'))
         .pipe(plug.bytediff.start())
         .pipe(plug.uglify())
-        .pipe(plug.bytediff.stop(bytediffFormatter))
+        .pipe(plug.bytediff.stop(common.bytediffFormatter))
+        .pipe(plug.header(common.createComments(spa_version)))
         .pipe(gulp.dest(config.build + 'js/'));
 });
 
@@ -147,7 +155,7 @@ gulp.task('scss', function() {
     log('Compiling SCSS --> CSS');
 
 	return merge(
-		// first sass-compile workbench scss files
+		// first sass-compile spaghetto scss files
 		gulp.src(config.scss.entrypoint)
 			.pipe(plug.plumber())
 			.pipe(plug.sass())
@@ -164,9 +172,10 @@ gulp.task('scss', function() {
 		.pipe(plug.autoprefixer('last 2 version', '> 5%'))
 		.pipe(plug.bytediff.start())
 		.pipe(plug.minifyCss({}))
-		.pipe(plug.bytediff.stop(bytediffFormatter))
+		.pipe(plug.bytediff.stop(common.bytediffFormatter))
 		.pipe(plug.rename('all.min.css'))
 	// output an optimized file for build mode
+  .pipe(plug.header(common.createComments(spa_version)))
 	.pipe(gulp.dest(config.build + 'css/'));
 });
 
@@ -196,7 +205,8 @@ gulp.task('vendorcss', function() {
         .pipe(plug.concat('vendor.min.css'))
         .pipe(plug.bytediff.start())
         .pipe(plug.minifyCss({}))
-        .pipe(plug.bytediff.stop(bytediffFormatter))
+        .pipe(plug.bytediff.stop(common.bytediffFormatter))
+        .pipe(plug.header(common.createComments(spa_version)))
         .pipe(gulp.dest(config.build + 'css/'));
 });
 
@@ -263,8 +273,8 @@ gulp.task('fonts', function() {
 
 /**
  * Gather components images into main content folder
- * they will be served from here in serve-dev mode
- * they will copied from here for build
+ * they will be served from here in serve-dev mode,
+ * in build mode they will be copied to build folder from here
  * @return {Stream}
  */
 gulp.task('components', function() {
@@ -431,7 +441,7 @@ gulp.task('serve-build', ['scss-watcher'], function() {
 gulp.task('serve-dist', function() {
 
     return gulp.src('').pipe(plug.notify({
-        title: "OcWorkbench Error",
+        title: "Spaghetto Error",
         onLast: true,
         message: 'gulp serve-dist is not implemented'
     }));
@@ -524,7 +534,7 @@ function startBrowserSync(isDev) {
         injectChanges: true,
         logFileChanges: true,
         logLevel: 'warn',
-        logPrefix: 'ocWorkbench',
+        logPrefix: 'spaghetto',
         notify: true,
         reloadDelay: 1000
     };
@@ -599,7 +609,7 @@ function startTests(singleRun, done) {
                 },
                 ghostMode: false,
                 logLevel: 'info',
-                logPrefix: 'ocWorkbench-test',
+                logPrefix: 'spaghetto-test',
             });
 
         gulp.watch('./report/karma/**/*.html').on("change", bsKarmaRpt.reload);
@@ -735,18 +745,6 @@ function errorLogger(error) {
 function clean(path, done) {
     log('Cleaning: ' + chalk.blue(path));
     del(path, done);
-}
-
-/**
- * Formatter for bytediff to display the size changes after processing
- * @param  {Object} data - byte data
- * @return {String}      Difference in bytes, formatted
- */
-function bytediffFormatter(data) {
-    var difference = (data.savings > 0) ? ' smaller.' : ' larger.';
-    return data.fileName + ' went from ' +
-        (data.startSize / 1000).toFixed(2) + ' kB to ' + (data.endSize / 1000).toFixed(2) + ' kB' +
-        ' and is ' + formatPercent(1 - data.percent, 2) + '%' + difference;
 }
 
 /**

@@ -1,15 +1,13 @@
 //        .pipe(plug.header(fs.readFileSync('./gulp/copyright.js'), {version: pkg.version}))
 
 /**
- * @author John Papa
+ * @author Aurelien Rainone
  * @version:
  *     <%= version %>
  * @links
- *     http://github.com/johnpapa/ng-demos
- *     http://twitter.com/johnpapa
- *     http://johnpapa.net
+ *     http://github.com/aurelien-rainone/spaghetto
  * @source
- *     http://github.com/johnpapa/ng-demos
+ *     http://github.com/aurelien-rainone/spaghetto
  * @license:
  *     MIT License http://www.opensource.org/licenses/mit-license.php
  */

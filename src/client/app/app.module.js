@@ -25,12 +25,12 @@ var myFunc = function(x){
          * Everybody has access to these.
          * We could place these under every feature area,
          * but this is easier to maintain.
-         */ 
+         */
         'app.core',
         'app.layout',
 
         /*
-         * OpenCog Workbench components
+         * Spaghetto additional components
          */
         'app.components'
     ]);

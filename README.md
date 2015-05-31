@@ -1,10 +1,10 @@
 ## Easily build modular single page webapps
 
-Besides being the italian singular for spaghetti, SPAghetto is a framework that
+Besides being the italian singular for spaghetti, Spaghetto is a framework that
 lets you build rich client-side applications composed of different
-sub-applications, or components, as called in SPAghetto.
+sub-applications, or components, as called in Spaghetto.
 
-SPAghetto doesn't write your components, but takes care of the rest :
+Spaghetto doesn't write your components, but takes care of the rest :
   - a full-featured [Bootstrap](http://getbootstrap.com/) navigation bar :
     - with tabs and menus for your components
     - automatic shows the active component menu and hides the others
@@ -30,12 +30,12 @@ concentrate on writing your application instead
 
 ## Build the example app
 
-# Hack SPAghetto
+# Hack Spaghetto
 
 ## Build it yourself
 
 ## Build your app documentation
 
 # License
-SPAghetto is released under the MIT License. See the [LICENSE][license] file for further details.
+Spaghetto is released under the MIT License. See the [LICENSE][license] file for further details.
 [license]: https://github.com/aurelien-rainone/spaghetto/blob/master/LICENSE
