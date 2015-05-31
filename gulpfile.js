@@ -3,7 +3,6 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var del = require('del');
 var glob = require('glob');
-var karma = require('karma').server;
 var merge = require('merge2');
 var config = require('./gulp.config.js')();
 var plug = require('gulp-load-plugins')();
@@ -17,7 +16,6 @@ var port = process.env.PORT || 7203;
 var bsClient = browserSync.create("bsClient");
 var bsKarmaRpt = browserSync.create("bsKarmaRpt");
 var bsNgDocs = browserSync.create("bsNgDocs");
-
 
 /**
  * List the available gulp tasks
@@ -154,7 +152,7 @@ gulp.task('scss', function() {
 			.pipe(plug.plumber())
 			.pipe(plug.sass())
 			.on('error', errorLogger),
-		// then the components scss	
+		// then the components scss
 		gulp.src(config.components.styles)
 			.pipe(plug.plumber())
 			.pipe(plug.sass())
@@ -217,7 +215,7 @@ gulp.task('inject', ['js', 'vendorjs', 'scss', 'vendorcss'], function() {
     var indexFilter = plug.filter(['index.html']);
 
     return gulp
-    
+
         .src([].concat(minifiedJs, minifiedCss, index)) // add all built min files and index.html
 
         .pipe(minJsFilter)                              // filter the stream to minified js
@@ -493,7 +491,7 @@ function startBrowserSync(isDev) {
 
     // places some watches before starting the browser
     if (isDev == false) {
-        
+
         gulp.watch(
             // watch everything that could change in the dev part
             [config.scss.files, config.components.styles, config.js, config.html],
@@ -578,6 +576,7 @@ function startTests(singleRun, done) {
     var child;
     var excludeFiles = [];
     var fork = require('child_process').fork;
+    var karma = require('karma').server;
 
     if (env.startServers) {
         log('Starting servers');
@@ -759,4 +758,3 @@ function bytediffFormatter(data) {
 function formatPercent(num, precision) {
     return (num * 100).toFixed(precision);
 }
-
