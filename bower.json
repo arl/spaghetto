@@ -1,15 +1,15 @@
 {
-  "name": "opencog-workbench",
+  "name": "spaghetto",
   "version": "0.0.1",
-  "description": "A tool to assist in the inspection and the manipulation of OpenCog state or dynamics",
+  "description": "Easily build modular single page webapps",
   "private": true,
   "authors": [
-    "Aurélien Rainone"
+    "Aurelien Rainone"
   ],
-  "license": "GNU Affero General Public License Version 3",
-  "homepage": "...",
+  "license": "MIT",
+  "homepage": "https://github.com/aurelien-rainone/spaghetto",
   "keywords": [
-    "opencog"
+    "angular, bootstrap, modular"
   ],
   "ignore": [
     "**/.*",

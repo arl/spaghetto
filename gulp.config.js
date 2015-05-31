@@ -38,7 +38,7 @@ module.exports = function() {
 		  bower.dir + "underscore/underscore-min.js",
 		  bower.dir + "angular-dragdrop/src/angular-dragdrop.min.js",
 		  bower.dir + "ngstorage/ngStorage.min.js",
-		  bower.dir + "jquery.terminal/js/jquery.terminal-min.js",            
+		  bower.dir + "jquery.terminal/js/jquery.terminal-min.js",
 		  clientContent + "lib/js/ui-bootstrap-tpls-0.12.1.min.js",
 		  clientContent + "lib/js/angular-underscore.js"
 		],
@@ -47,7 +47,7 @@ module.exports = function() {
 		  clientApp + "**/*.js"
 		],
 		specs: client + "test/specs/*.spec.js",
-		
+
 		/* styles */
 		vendorcss: [
 		  bower.dir + "bootstrap/dist/css/bootstrap.min.css",
@@ -61,7 +61,7 @@ module.exports = function() {
 		  entrypoint : clientContent + "styles/styles.scss"
 		},
 
-		/* workbench components */
+		/* spaghetto components */
 		components: {
 		  styles : clientApp + "components/*/assets/styles/**/*.scss",
 		  images : clientApp + "components/*/assets/images/**/*.*"
@@ -79,17 +79,17 @@ module.exports = function() {
 		/* doc generation */
 		doc: {
 			output: './doc',
-			title: 'Workbench Doc',
+			title: 'Spaghetto Documentation',
 			startPage: '/overview',
 			sections : {
 				'overview' : {
-					title: 'Overview', 
+					title: 'Overview',
 					api: false,
 					glob: [
 						client + 'app/*.ngdoc'
 					]
 				},
-				'workbench': {
+				'spaghetto': {
 					title: 'API Documentation',
 					api: true,
 					glob: [
@@ -97,9 +97,9 @@ module.exports = function() {
 						clientApp + "**/*module*.js",
 						'!' + clientApp + 'components/**/*.*'
 						]
-				},				
+				},
 				'exampleComponent' : {
-					title: 'Example Component', 
+					title: 'Example Component',
 					api: false,
 					glob: [
 						clientApp + 'components/dummy/**/*.*'

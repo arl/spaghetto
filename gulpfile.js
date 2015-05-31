@@ -635,7 +635,7 @@ function startTests(singleRun, done) {
 /**
  * generate documentation pages with ngdocs
  */
-gulp.task('ngdocs', function (cb) {
+gulp.task('doc', function (cb) {
 
     var gulpDocs = require('gulp-ngdocs');
     var options = {
@@ -652,7 +652,7 @@ gulp.task('ngdocs', function (cb) {
 /**
  * serve documentation
  */
-gulp.task('serve-doc', ['ngdocs'], function () {
+gulp.task('serve-doc', ['doc'], function () {
 
     var port = 8000;
 
@@ -661,10 +661,10 @@ gulp.task('serve-doc', ['ngdocs'], function () {
             baseDir: config.doc.output
         },
         port: port,
-        logPrefix: 'ocWorkbench-doc'
+        logPrefix: 'spaghetto-doc'
     });
 
-    log(chalk.blue.bold('Doc server started on http://localhost:' + port));
+    log(chalk.blue.bold('Documentation server started on http://localhost:' + port));
 });
 
 
