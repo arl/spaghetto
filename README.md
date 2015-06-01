@@ -8,14 +8,14 @@
 # Easily build modular single page webapps
 
 * [What is Spaghetto?](#what-is-spaghetto)
-* [How it works :](#how-it-works-)
-* [[live example] : not yet...](#live-example--not-yet)
+* [How it Works?](#how-it-works)
 * [Install](#install)
-* [Build the example app](#build-the-example-app)
-* [Hack Spaghetto](#hack-spaghetto)
- * [Build it yourself](#build-it-yourself)
- * [Build your app documentation](#build-your-app-documentation)
+  * [Build the Example App...](#build-the-example-app)
+* [Live Example : not yet...](#live-example--not-yet)
+* [Spaghetto Documentation : not yet...](#spaghetto-documentation--not-yet)
+* [Generate your App Documentation : not yet...](#generate-your-app-documentation--not-yet)
 * [License](#license)
+
 
 
 ## What is Spaghetto?
@@ -46,7 +46,7 @@ you'd except in a rich webapp :
   - responsive
 - local and session storage to save app and/or user data
 
-## How it works :
+## How it Works?
 
 A Spaghetto component is self-contained, all files needed to build it (html
 templates, js scripts and css/sass stylesheets) reside in one directory,
@@ -68,15 +68,15 @@ concentrate on writing your application instead
 
 ## Install
 
-### Build the example app...
+### Build the Example App...
 ...and start from here
 
-## [live example] : not yet...
+## Live Example : not yet...
 
-## [Spaghetto Documentation] : not yet...
+## Spaghetto Documentation : not yet...
 
-## Generate your app documentation : not yet...
+## Generate your App Documentation : not yet...
 
-# License
+## License
 Spaghetto is released under the MIT License. See the [LICENSE][license] file for further details.
 [license]: https://github.com/aurelien-rainone/spaghetto/blob/master/LICENSE
