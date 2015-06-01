@@ -1,3 +1,10 @@
+<p align="center">
+  <a href="http://gulpjs.com">
+    <img src="https://raw.githubusercontent.com/aurelien-rainone/artwork/master/spaghetto-l.png">
+  </a>
+</p>
+
+
 ## Easily build modular single page webapps
 
 Besides being the italian singular for spaghetti, Spaghetto is a framework that
