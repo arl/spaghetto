@@ -12,12 +12,12 @@ lets you build rich client-side applications composed of different
 sub-applications, or components, as called in Spaghetto.
 
 Spaghetto doesn't write your components, but takes care of the rest :
-  - a full-featured [Bootstrap](http://getbootstrap.com/) navigation bar :
+  - full-featured [Bootstrap](http://getbootstrap.com/) navigation bar :
     - with tabs and menus for your components
-    - automatic shows the active component menu and hides the others
+    - automatically shows active component menus and hides the others
     - responsive
   - the power of [AngularJS](http://angularjs.org/)
-  - a clear separation of components code/styling
+  - a clear separation of components code, files and stylesheets
   - local and session storage to save app settings and/or user data
   - folder hierachy allows for huge components to be built
   - easy to hack workflow written with [Gulp](http://gulpjs.com/), already setup for :
