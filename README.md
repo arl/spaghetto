@@ -5,12 +5,20 @@
 </p>
 
 
-## Easily build modular single page webapps
+# Easily build modular single page webapps
+
+* [What is Spaghetto?](#what-is-spaghetto)
+* [How it works :](#how-it-works-)
+* [[live example] : not yet...](#live-example--not-yet)
+* [Install](#install)
+* [Build the example app](#build-the-example-app)
+* [Hack Spaghetto](#hack-spaghetto)
+ * [Build it yourself](#build-it-yourself)
+ * [Build your app documentation](#build-your-app-documentation)
+* [License](#license)
 
 
-### index here
-
-### What is Spaghetto?
+## What is Spaghetto?
 
 Besides being the italian singular for spaghetti, Spaghetto is a framework that
 lets you build rich client-side applications composed of different
@@ -22,9 +30,10 @@ Already configured and wired for you, so you can start coding instantly :
  handling of your app states
  - [Bootstrap](http://getbootstrap.com/) for responsive components
  - [Gulp](http://gulpjs.com/) to build all
- - [Sass](http://sass-lang.com/) for styling
- - [NgDocs](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation) to generate your documentation
- - [JSHint](http://jshint.com/) and [JSCS](http://jscs.info/) for code quality with an homogeneous style
+ - [Sass](http://sass-lang.com/) CSS compatible extension
+ - [NgDocs](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation)
+ to generate your app documentation
+ - [JSHint](http://jshint.com/) and [JSCS](http://jscs.info/) for code quality and style
  - and more...
 
 But Spaghetto is not just an assemblage of well-chosen libraries, it's also a
@@ -37,7 +46,7 @@ you'd except in a rich webapp :
   - responsive
 - local and session storage to save app and/or user data
 
-### How it works :
+## How it works :
 
 A Spaghetto component is self-contained, all files needed to build it (html
 templates, js scripts and css/sass stylesheets) reside in one directory,
@@ -57,17 +66,16 @@ And the list goes on, read the extensive documentation
 All is done so you don't have to worry about setup and configuration and you can
 concentrate on writing your application instead
 
-### [live example] : not yet...
+## Install
 
-### Install
+### Build the example app...
+...and start from here
 
-### Build the example app
+## [live example] : not yet...
 
-# Hack Spaghetto
+## [Spaghetto Documentation] : not yet...
 
-## Build it yourself
-
-## Build your app documentation
+## Generate your app documentation : not yet...
 
 # License
 Spaghetto is released under the MIT License. See the [LICENSE][license] file for further details.
