@@ -7,35 +7,61 @@
 
 ## Easily build modular single page webapps
 
+
+### index here
+
+### What is Spaghetto?
+
 Besides being the italian singular for spaghetti, Spaghetto is a framework that
 lets you build rich client-side applications composed of different
 sub-applications, or components, as called in Spaghetto.
 
-Spaghetto doesn't write your components, but takes care of the rest :
-  - full-featured [Bootstrap](http://getbootstrap.com/) navigation bar :
-    - with tabs and menus for your components
-    - automatically shows active component menus and hides the others
-    - responsive
-  - the power of [AngularJS](http://angularjs.org/)
-  - a clear separation of components code, files and stylesheets
-  - local and session storage to save app settings and/or user data
-  - folder hierachy allows for huge components to be built
-  - easy to hack workflow written with [Gulp](http://gulpjs.com/), already setup for :
-      - [JSHint](http://jshint.com/) and [JSCS](http://jscs.info/) cor code quality and style
-      - minified, compressed code [UglifyJS](https://github.com/mishoo/UglifyJS)
-      - component styling with the powerful [SCSS](http://sass-lang.com/)
-      - documentation built with [ngdoc](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation#standard-supported-jsdoc-directives)
+Already configured and wired for you, so you can start coding instantly :
+ - [AngularJS](http://angularjs.org/) for MVC, templating, etc.
+ - [AngularUI-Router](https://github.com/angular-ui/ui-router) for clear
+ handling of your app states
+ - [Bootstrap](http://getbootstrap.com/) for responsive components
+ - [Gulp](http://gulpjs.com/) to build all
+ - [Sass](http://sass-lang.com/) for styling
+ - [NgDocs](https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation) to generate your documentation
+ - [JSHint](http://jshint.com/) and [JSCS](http://jscs.info/) for code quality with an homogeneous style
+ - and more...
+
+But Spaghetto is not just an assemblage of well-chosen libraries, it's also a
+light framework with a simple API and it provides you with the main features
+you'd except in a rich webapp :
+- a double [Bootstrap](http://getbootstrap.com/) navigation bar :
+  - with tabs to switch from one component to another
+  - each component has its own set of navigation items (drop-down menus,
+  search bar, etc.)
+  - responsive
+- local and session storage to save app and/or user data
+
+### How it works :
+
+A Spaghetto component is self-contained, all files needed to build it (html
+templates, js scripts and css/sass stylesheets) reside in one directory,
+organized as you prefer.
+
+You develop a component as a stand-alone webapp.
+
+A component underlying state -made of controller(s) and view(s)- is instantiated
+when the component is displayed, and destroyed when the component tab is closed.
+Local/session storage take care of the component data that needs to be kept.
+
+In one command '''gulp build''' : scripts and stylesheets are minified and concatenated : your app is built!
+
 
 And the list goes on, read the extensive documentation
 
 All is done so you don't have to worry about setup and configuration and you can
 concentrate on writing your application instead
 
-## [live example] : not yet...
+### [live example] : not yet...
 
-## Install
+### Install
 
-## Build the example app
+### Build the example app
 
 # Hack Spaghetto
 
