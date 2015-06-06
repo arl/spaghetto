@@ -15,10 +15,8 @@ var chalk = plug.util.colors;
 global.date = plug.util.date;
 var port = process.env.PORT || 7203;
 
-// create 2 browser-sync instances
+// create 3 browser-sync instances
 var bsClient = browserSync.create("bsClient");
-var bsKarmaRpt = browserSync.create("bsKarmaRpt");
-var bsNgDocs = browserSync.create("bsNgDocs");
 
 /**/
 var spa_version = '0.0.1'
@@ -598,6 +596,8 @@ function startTests(singleRun, done) {
         excludeFiles.push('./src/client/test/midway/**/*.spec.js');
     }
 
+    // create a named browserSync instance
+    var bsKarmaRpt = browserSync.create("bsKarmaRpt");
 
     // in autotest mode, karma tests reports are auto-reloaded
     if (!singleRun) {
@@ -665,6 +665,8 @@ gulp.task('doc', function (cb) {
 gulp.task('serve-doc', ['doc'], function () {
 
     var port = 8000;
+
+    var bsNgDocs = browserSync.create("bsNgDocs");
 
     bsNgDocs.init({
         server: {
