@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://gulpjs.com">
+  <a href="https://github.com/aurelien-rainone/spaghetto">
     <img src="https://raw.githubusercontent.com/aurelien-rainone/artwork/master/spaghetto-l.png">
   </a>
 </p>
@@ -83,7 +83,7 @@ concentrate on writing your application instead
 #### Serve the Example App...
 
   Once all is installed, type ```gulp serve-dev``` to serve the  spaghetto example app
-  
+
 #### Build the example app####
 
   Now ```gulp build``` will create a production build of the app in /build folder. Scripts and stylesheets are all concatenated and minified, images are compressed, etc.
