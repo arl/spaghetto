@@ -1,17 +1,16 @@
 (function() {
     'use strict';
 
-
-/**
- * @ngdoc function
- * @name app.myFunc
- * @description
- * This is a sample function
- * @param {number} x - any number, don't matter which
- */
-var myFunc = function(x){
-  return 2*x;
-};
+    /**
+     * @ngdoc function
+     * @name app.myFunc
+     * @description
+     * This is a sample function
+     * @param {number} x - any number, don't matter which
+     */
+    var myFunc = function(x) {
+        return 2 * x;
+    };
 
     angular.module('app', [
         /*

@@ -5,8 +5,7 @@
         .module('blocks.menu')
         .directive('checkboxMenuitem', checkboxMenuitem)
         .directive('radioMenuitem', radioMenuitem);
-
-
+        
     /**
      * @ngdoc directive
      * @name checkboxMenuitem
@@ -59,7 +58,7 @@
         var directive = {
             restrict: 'A',
             replace: true,
-            scope : { 'subm' : '=' },
+            scope : {'subm' : '='},
             template : getTemplate(),
             link: link
         };
@@ -94,7 +93,7 @@
         var directive = {
             restrict: 'A',
             replace: true,
-            scope : { 'subm': '=' },
+            scope : {'subm': '='},
             template : getTemplate,
             link: link
         };
