@@ -25,7 +25,7 @@ lets you build rich client-side applications composed of different
 sub-applications, or components, as called in Spaghetto.
 
 Already configured and wired for you, so you can start coding instantly :
- - [AngularJS](http://angularjs.org/) for MVC, templating, etc.
+ - [AngularJS](http://angularjs.org/) for MVC, templating, and a lot more...
  - [AngularUI-Router](https://github.com/angular-ui/ui-router) for clear
  handling of your app states
  - [Bootstrap](http://getbootstrap.com/) for responsive components
@@ -35,9 +35,9 @@ Already configured and wired for you, so you can start coding instantly :
  to generate your app documentation
  - [JSHint](http://jshint.com/) and [JSCS](http://jscs.info/) for code quality and style
  - and more...
-
+
 But Spaghetto is not just an assemblage of well-chosen libraries, it's also a
-light framework with a simple API and it provides you with the main features
+light framework with a simple API and comes to you with the main features
 you'd except in a rich webapp :
 - a double [Bootstrap](http://getbootstrap.com/) navigation bar :
   - with tabs to switch from one component to another
@@ -47,6 +47,13 @@ you'd except in a rich webapp :
 - local and session storage to save app and/or user data
 
 ## How it Works?
+
+2 ways to use Spaghetto : 
+  - use yeoman generator-spaghetto to have just the needed, opimized files and
+build-process: not available yet ;-)
+  - or, clone/fork this repository and start to hack
+
+Anything you choose, spaghetto comes with an example component .
 
 A Spaghetto component is self-contained, all files needed to build it (html
 templates, js scripts and css/sass stylesheets) reside in one directory,
