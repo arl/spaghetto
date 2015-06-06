@@ -68,8 +68,27 @@ concentrate on writing your application instead
 
 ## Install
 
-### Build the Example App...
-...and start from here
+  - install NodeJS
+  - install Spaghetto global dependencies :  
+  ```npm install -g bower gulp```
+  - clone repository :  
+  ```git clone
+  https://github.com/aurelien-rainone/spaghetto```
+  - change to spaghetto directory :  
+  ```cd spaghetto```
+  - install Spaghetto local dependencies :  
+  ```npm install```  
+  this should install npm **and** bower packages, but in case it would't you can type ```bower install```  
+
+#### Serve the Example App...
+
+  Once all is installed, type ```gulp serve-dev``` to serve the  spaghetto example app
+  
+#### Build the example app####
+
+  Now ```gulp build``` will create a production build of the app in /build folder. Scripts and stylesheets are all concatenated and minified, images are compressed, etc.
+
+  Serve the production build by typing ```gulp serve-build``` or just serve the /build folder using your preferred server
 
 ## Live Example : not yet...
 
