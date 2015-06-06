@@ -63,8 +63,9 @@ module.exports = function() {
 
 		/* spaghetto components */
 		components: {
-		  styles : clientApp + "components/*/assets/styles/**/*.scss",
-		  images : clientApp + "components/*/assets/images/**/*.*"
+		  styles : clientApp + "components/**/*.scss",
+		  images : clientApp + "components/**/*.(png|gif|jpg)",
+		  scripts : clientApp + "components/**/*.js"
 		},
 
 		/* assets */
