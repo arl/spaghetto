@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var plug = require('gulp-load-plugins')();
 
 /** render config file accessible for all task scripts */
-global.config = require('./gulp.config.js')();
+global.config = require('./gulp/gulp.config.js')();
 
 /** also some common modules/functions */
 global.common = require('./gulp/common.js');

@@ -31,11 +31,11 @@
         /**
          * @ngdoc method
          * @name configureMenus
-         * @methodOf workbench.menu:menuhelper
+         * @methodOf spaghetto.menu:menuhelper
          * @kind function
          *
          * @description
-         * Describe the menus for a workbench component
+         * Describe the menus for a spaghetto component
          *
          * ## Syntax highlighting
          * When combined with [highlight.js][] this starts looking as a kind of IDE :-)

@@ -8,12 +8,17 @@
     /**
      * @ngdoc service
      * @name spaghetto.logger:logListeners
+     *
      * @description
      * Manage different log listeners so that log messages can have various
      * destinations.
+     *
+     * 
      * The default behaviour is to send log messages to :
-     *   - '$log' : Angular simple logging service, writing into the browser's console
-     *   - 'toaster' : Toaster screen notifications
+     * 
+     *  * '$log' : Angular simple logging service, writing into the browser's console
+     *  * 'toaster' : Toaster screen notifications
+     *   
      * You can change this behaviour by installing new log listeners and/or removing
      * the default ones
 
@@ -53,10 +58,10 @@
          * <pre>
             // define my Log Listener
             var myLogListener = {
-                error   : errorLog(),
-                info    : infoLog(),
-                success : successLog(),
-                warning : warningLog()
+                error   : errorLog,
+                info    : infoLog,
+                success : successLog,
+                warning : warningLog
             }
 
             function errorLog(msg, data, title) {
@@ -73,8 +78,12 @@
             }
             logListeners.addListener('mylog', myLogListener);
          * </pre>
-         * @param {string} name log listener name
-         * @param {Object} log listener object
+         * @param {string} name                 log listener name
+         * @param {Object} logListener          log listener object
+         * @param {Function} logListener.error  log an error message
+         * @param {Function} logListener.info   log an info message
+         * @param {Function} logListener.success log a success message
+         * @param {Function} logListener.warning log a warning message
          */        
         function addListener(name, logListener) {
             listeners[name] = logListener;

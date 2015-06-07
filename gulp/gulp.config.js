@@ -80,7 +80,7 @@ module.exports = function() {
 		/* doc generation */
 		doc: {
 			output: './doc',
-			title: 'Spaghetto Documentation',
+			title: 'Spaghetto',
 			startPage: '/overview',
 			sections : {
 				'overview' : {
@@ -91,7 +91,7 @@ module.exports = function() {
 					]
 				},
 				'spaghetto': {
-					title: 'API Documentation',
+					title: 'API',
 					api: true,
 					glob: [
 						clientApp + '**/*.js',

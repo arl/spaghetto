@@ -6,10 +6,19 @@ module.exports = function (gulp, plug) {
    */
   gulp.task('doc', function (cb) {
 
+    debugger;
     var gulpDocs = require('gulp-ngdocs');
     var options = {
       title: config.doc.title,
-      startPage: config.doc.startPage
+      startPage: config.doc.startPage,
+      html5Mode: false,
+      image: "./ngdocs_assets/spaghetto.png",
+      // navTemplate: './ngdocs_assets/docnav.html',
+      styles: [ 'ngdocs_assets/spaghetto-docs.css' ],
+      scripts: [ 
+        'bower_components/jquery/dist/jquery.js',
+        'ngdocs_assets/spaghetto-docs.js'        
+        ]
     }
 
     gulpDocs.sections(config.doc.sections)
