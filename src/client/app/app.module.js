@@ -29,7 +29,7 @@
         'app.layout',
 
         /*
-         * Spaghetto additional components
+         * Spaghetto components
          */
         'app.components'
     ]);

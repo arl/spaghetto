@@ -7,7 +7,7 @@
 
     /**
      * @ngdoc service
-     * @name workbench.menu:menuhelper
+     * @name spaghetto.menu:menuhelper
      * @description
      * Helper service for component menu creation and handling
      */
