@@ -1,4 +1,3 @@
-// Include in index.html so that app level exceptions are handled.
 (function() {
     'use strict';
 
@@ -7,7 +6,7 @@
         .provider('exceptionHandler', exceptionHandlerProvider)
         .config(config);
 
-    /**1
+    /**
      * configure exception handling output
      */
     function exceptionHandlerProvider() {
@@ -25,8 +24,6 @@
         };
     }
 
-    // config.$inject = ['$provide'];
-
     /**
      * Configure by setting an optional string value for appErrorPrefix.
      * Accessible via config.appErrorPrefix (via config value).
@@ -36,6 +33,8 @@
     function config($provide) {
         $provide.decorator('$exceptionHandler', extendExceptionHandler);
     }
+
+
 
     /**
      * Extend the $exceptionHandler service to also display a toast.
@@ -62,4 +61,5 @@
             logger.error(exception.message, errorData);
         };
     }
+
 })();
