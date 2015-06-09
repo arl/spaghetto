@@ -35,7 +35,8 @@ Already configured and wired for you, so you can start coding instantly :
  to generate your app documentation
  - [JSHint](http://jshint.com/) and [JSCS](http://jscs.info/) for code quality and style
  - and more...
-
+
+
 But Spaghetto is not just an assemblage of well-chosen libraries, it's also a
 light framework with a simple API and comes to you with the main features
 you'd except in a rich webapp :
