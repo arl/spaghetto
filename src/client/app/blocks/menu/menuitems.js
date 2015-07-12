@@ -8,17 +8,17 @@
         
     /**
      * @ngdoc directive
-     * @name checkboxMenuitem
+     * @name spaghetto.blocks.menu.checkboxMenuItem
      * @restrict A
      *
      * @description
      * The `checkboxMenuitem` create a checkable item in a menu dropdown
      *
-     * it it not meant to be used directly, as the dropdown menus are automatically created
+     * it is not meant to be used directly, as the dropdown menus are automatically created
      * with menuhelper#configureMenus
      *
      * This directive can be applied only within the scope of an
-     * {@link menu.menuhelper#configureMenus ngRepeat}.
+     * {@link blocks.menu.#configureMenus ngRepeat}.
      *
      * @element ANY
      * @param {expression} ngClassEven {@link guide/expression Expression} to eval. The
